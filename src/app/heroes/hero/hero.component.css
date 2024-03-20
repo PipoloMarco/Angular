@@ -1,0 +1,14 @@
+h1 {
+  color: rgb(148, 38, 38);
+}
+
+dd {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: blueviolet;
+}
+
+td {
+  font-size: 2rem;
+  color:chocolate;
+}
