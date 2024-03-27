@@ -1,0 +1,33 @@
+<div class="col">
+
+      <h4>Listado</h4>
+
+      <ul   class="list-group">
+        <li *ngIf="characterList.length === 0" class="list-group-item">
+         <span>No hay personajes de dbz para eliminar.</span>
+        </li>
+
+        <li class="list-group-item"
+        *ngFor="let character of characterList;
+
+         let i = index ;
+         let isFirst = first;
+         let isLast = last;
+         let isEvent = even;"
+         [ngClass]="{ ' list-group-item-warning' : isFirst,
+        'list-group-item-danger' : isLast}">
+
+          <span class="text-primary">{{i +1 }}</span>
+          <strong>Name:</strong>
+          <span> {{character.name}} </span>
+          <strong>Power:</strong>
+          <span> {{character.power}}</span>
+
+          <span>Es el ultimo:{{isLast}}</span>
+          <span>Es el par:{{isEvent}}</span>
+          <span><button (click)="onDeleteCharacter(character.id)" class="btn btn-danger">X</button></span>
+
+         </li>
+      </ul>
+
+  </div>
