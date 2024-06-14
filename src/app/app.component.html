@@ -1,2 +1,3 @@
-<h1>App auth</h1>
-<router-outlet />
+<h1 *ngIf="!finashedAuthCheck()">Loading</h1>
+
+<router-outlet *ngIf="finashedAuthCheck()" />
