@@ -21,7 +21,8 @@ export class RegisterPageComponent {
 
   onSubmit() {
     const { user, email, password } = this.formRegister.value;
-    this.authService.register(email, password, user).subscribe({
+
+    this.authService.register(email!, password!, user!).subscribe({
       next: () => this.router.navigateByUrl('auth/login'),
     });
   }
