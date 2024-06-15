@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AuthService } from '../../../auth/service/auth.service';
 
 @Component({
@@ -7,15 +7,18 @@ import { AuthService } from '../../../auth/service/auth.service';
   styleUrl: './dashboard-layout.component.css',
 })
 export class DashboardLayoutComponent {
-  private AuthService = inject(AuthService);
-
-  public user = computed(() => this.AuthService.currentUser());
+  constructor(private AuthService: AuthService) {}
 
   // get use() {
   //   return this.AuthService.currentUser()
   // }
 
   onLogout() {
-    this.AuthService.logout();
+    if (this.AuthService) {
+      // Check if AuthService is initialized
+      console.log(this.AuthService.logout());
+    } else {
+      console.error('AuthService not initialized');
+    }
   }
 }
