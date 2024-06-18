@@ -52,9 +52,9 @@ export class AuthService {
   }
 
   logout() {
+    localStorage.removeItem('token');
     this._authStatus.set(AuthStatus.noAunthenticated);
     this._currentUser.set(null);
-    localStorage.removeItem('token');
   }
   login(email: string, password: string): Observable<boolean> {
     const url = `${this.baseUrl}/auth/login`;
