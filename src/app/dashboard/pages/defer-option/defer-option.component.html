@@ -1,1 +1,90 @@
-<p>defer-option works!</p>
+<app-shared-title title="Defer Triggers" />
+
+<section>
+  <h1 class="text-xl">Interraciones</h1>
+  <hr class="my-2" />
+  @defer (on interaction) {
+  <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span> On Interracion</span>
+  </app-heavy-loaders-fast>
+  }@placeholder {
+  <div class="w-full h-20 bg-purple-100">
+    <h1>Click Me</h1>
+  </div>
+  }
+</section>
+
+<section>
+  <hr class="my-2" />
+  <button
+    #btnInteraction
+    class="p-2 bg-blue-500 hover:bg-blue-700 transition-all rounded text-white my-2"
+  >
+    Click Me!!
+  </button>
+  @defer (on interaction(btnInteraction)) {
+  <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span> On Interracion</span>
+  </app-heavy-loaders-fast>
+  }@placeholder {
+  <div class="w-full h-20 bg-purple-100">
+    <h3>PlayHolder</h3>
+  </div>
+  }
+</section>
+
+<section>
+  <hr class="my-2" />
+
+  @defer (on hover) {
+  <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span> On hover</span>
+  </app-heavy-loaders-fast>
+  }@placeholder {
+  <div class="w-full h-20 bg-purple-100">
+    <h3>PlayHolder</h3>
+  </div>
+  }
+</section>
+
+<section>
+  <hr class="my-2" />
+
+  @defer (on immediate) {
+  <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span> On immediate</span>
+  </app-heavy-loaders-fast>
+  }@placeholder {
+  <div class="w-full h-20 bg-purple-100">
+    <h3>PlayHolder</h3>
+  </div>
+  }
+</section>
+
+<section>
+  <hr class="my-2" />
+
+  @defer (on timer(2000)) {
+  <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span> On timer</span>
+  </app-heavy-loaders-fast>
+  }@placeholder {
+  <div class="w-full h-20 bg-purple-100">
+    <h3>2 Segundo</h3>
+  </div>
+  }
+</section>
+
+<section>
+  <hr class="my-2" />
+
+  @defer (on hover; prefetch on idle) {
+  <app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+    <span> On Hover, idle</span>
+  </app-heavy-loaders-fast>
+  }@placeholder {
+  <div class="w-full h-20 bg-purple-100">
+    <h3>{{ "On Hover, idle" | titlecase }}</h3>
+  </div>
+  }
+</section>

@@ -8,6 +8,6 @@ import { Component, Input, booleanAttribute, input } from '@angular/core';
 })
 export class TitleComponent {
   @Input({ required: true })
-  public title!: string;
+  public title!: string | any;
   @Input({ transform: booleanAttribute }) withShadow: boolean = false;
 }

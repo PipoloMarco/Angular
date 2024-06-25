@@ -3,7 +3,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "@shared/*": ["./src/app/shared/*"]
+      "@shared/*": ["./src/app/shared/*"],
+      "@interfaces/*": ["./src/app/interfaces/*"],
+      "@service/*": ["./src/app/service/*"]
     },
     "outDir": "./dist/out-tsc",
     "strict": true,
